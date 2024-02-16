@@ -26,5 +26,3 @@ def imprimir_hash():
                 adicionar_hash(hash_valor)
                 print(f'Arquivo: {nome_arquivo} | Hash: {hash_valor} - Adicionado a database')
 
-if __name__ == "__main__":
-    imprimir_hash()

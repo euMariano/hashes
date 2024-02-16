@@ -1,7 +1,9 @@
 # importação
 from baixar_gifs import baixar_gifs
-from hashes import imprimir_hash, verificar_existencia_hash, adicionar_hash
+from hashes import imprimir_hash
+
 
 #chamada de função
-baixar_gifs()
-imprimir_hash()
+if __name__ == "__main__":
+    baixar_gifs()
+    imprimir_hash()

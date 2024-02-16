@@ -22,7 +22,7 @@ def baixar_gifs():
         try:
             numero_formatado = str(i).zfill(3)
             url_gif = BASE_URL.format(i=numero_formatado)
-            nome_arquivo = os.path.join(OUTPUT_DIR, f'hug{i}.gif')
+            nome_arquivo = os.path.join("001", OUTPUT_DIR, f'hug{i}.gif')
             if response.status_code == requests.codes.OK:
                 baixar_arquivo(url_gif, nome_arquivo)
             else:
