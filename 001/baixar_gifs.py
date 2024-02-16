@@ -1,9 +1,6 @@
+# baixar_gifs.py
 import requests
 import os
-
-response = requests.get("https://nekos.life/api/v2/img/hug")
-json_url = response.json()
-json_data = json_url.get('url')
 
 def baixar_arquivo(url, endereco):
     resposta = requests.get(url)
@@ -14,7 +11,11 @@ def baixar_arquivo(url, endereco):
     else:
         resposta.raise_for_status()
 
-if __name__ == "__main__":
+def baixar_gifs():
+    response = requests.get("https://nekos.life/api/v2/img/hug")
+    json_url = response.json()
+    json_data = json_url.get('url')
+
     for i in range(1, 21):
         BASE_URL = 'https://cdn.nekos.life/hug/hug_{i}.gif'
         OUTPUT_DIR = "img"
@@ -28,4 +29,7 @@ if __name__ == "__main__":
                 print(f'erro ao realizar download do gif {i}. Código do status: {response.status_code}')
         except requests.exceptions.RequestException as e:
             print(f'erro ao baixar gif {i}. {e}')
-    print("fim do download dos gifs")
+    print("fim do download dos gifs\n")
+
+if __name__ == "__main__":
+    baixar_gifs()
