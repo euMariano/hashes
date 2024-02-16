@@ -3,4 +3,4 @@
 all: run
 
 run:
-	@python3 ./001/main.py
+	@python3 ./src/main.py

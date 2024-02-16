@@ -1,5 +1,4 @@
 import sqlite3
-import os
 
 DB_FILE = 'hashes.db'
 
@@ -11,7 +10,7 @@ def criar_tabela():
     conn.commit()
     conn.close()
 
-def verificar_existencia_hash(hash):
+def hash_existe(hash):
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
 
